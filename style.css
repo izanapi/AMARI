@@ -1558,3 +1558,235 @@ footer{display:flex;justify-content:space-between;padding:8px 4px 0;font-size:10
   }
   .fx-strip{height:32px !important}
 }
+
+/* v0.42 contrast toggle */
+.footer-right{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.contrast-toggle{
+  width:24px;
+  height:20px;
+  padding:0;
+  border:1px solid currentColor;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:12px;
+  line-height:1;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+.contrast-toggle:active{
+  background:var(--white);
+  color:var(--cyan);
+}
+
+/* Alternate high-legibility mode:
+   preserve cyan background, change the instrument ink from white to near-black blue. */
+body.__old_contrast_mode{
+  --white:#356f78;
+  color:#356f78;
+}
+
+/* A few legacy rules use literal white rather than the CSS variable. */
+body.__old_contrast_mode .note,
+body.__old_contrast_mode .base,
+body.__old_contrast_mode .track-dot,
+body.__old_contrast_mode .pulse i{
+  background:#356f78 !important;
+}
+
+body.__old_contrast_mode .cycle-unit small,
+body.__old_contrast_mode .telemetry-cell,
+body.__old_contrast_mode footer,
+body.__old_contrast_mode .fx-label,
+body.__old_contrast_mode .fx-value{
+  color:#356f78 !important;
+}
+
+body.__old_contrast_mode .selected-track{
+  outline-color:#356f78 !important;
+}
+
+body.__old_contrast_mode .step.inactive{
+  opacity:.34 !important;
+}
+
+body.__old_contrast_mode .step.playing-step .n,
+body.__old_contrast_mode .rate-btn.active,
+body.__old_contrast_mode .root-btn.active{
+  background:#356f78 !important;
+  color:var(--cyan) !important;
+}
+
+body.__old_contrast_mode .reverb-fill,
+body.__old_contrast_mode .fx-fill{
+  border-color:#356f78 !important;
+}
+
+body.__old_contrast_mode .reverb-handle,
+body.__old_contrast_mode .fx-handle{
+  background:#356f78 !important;
+}
+
+body.__old_contrast_mode .rail,
+body.__old_contrast_mode .fx-slider::before,
+body.__old_contrast_mode #delaySlider::after{
+  border-color:rgba(53,111,120,.82) !important;
+}
+
+body.__old_contrast_mode .rate-btn,
+body.__old_contrast_mode .root-btn,
+body.__old_contrast_mode .param-btn,
+body.__old_contrast_mode .steps-inline,
+body.__old_contrast_mode .meta-rate,
+body.__old_contrast_mode .root-bank,
+body.__old_contrast_mode .fx-strip,
+body.__old_contrast_mode .fx-unit,
+body.__old_contrast_mode .tools,
+body.__old_contrast_mode .tools button,
+body.__old_contrast_mode .track,
+body.__old_contrast_mode .meta,
+body.__old_contrast_mode .top,
+body.__old_contrast_mode .master-controls,
+body.__old_contrast_mode .bpm-control,
+body.__old_contrast_mode .random-all{
+  border-color:#356f78 !important;
+}
+
+@media(max-width:520px){
+  .footer-right{gap:6px}
+  .contrast-toggle{
+    width:22px;
+    height:18px;
+    font-size:11px;
+  }
+}
+
+/* v0.43 softer alternate ink */
+body.__old_contrast_mode .step.inactive{
+  opacity:.42 !important;
+}
+
+/* v0.44 COLOR modes
+   WHITE = original instrument
+   SOFT  = muted blue-teal ink
+   YELLOW/ORANGE = white instrument with colored active state only */
+.contrast-toggle{
+  width:38px !important;
+  font-size:6px !important;
+  letter-spacing:.06em;
+}
+
+/* SOFT: alternate full-interface ink */
+body.color-soft{
+  --white:#356f78;
+  color:#356f78;
+}
+body.color-soft .note,
+body.color-soft .base,
+body.color-soft .track-dot,
+body.color-soft .pulse i{
+  background:#356f78 !important;
+}
+body.color-soft .cycle-unit small,
+body.color-soft .telemetry-cell,
+body.color-soft footer,
+body.color-soft .fx-label,
+body.color-soft .fx-value{
+  color:#356f78 !important;
+}
+body.color-soft .rate-btn,
+body.color-soft .root-btn,
+body.color-soft .param-btn,
+body.color-soft .steps-inline,
+body.color-soft .meta-rate,
+body.color-soft .root-bank,
+body.color-soft .fx-strip,
+body.color-soft .fx-unit,
+body.color-soft .tools,
+body.color-soft .tools button,
+body.color-soft .track,
+body.color-soft .meta,
+body.color-soft .top,
+body.color-soft .master-controls,
+body.color-soft .bpm-control,
+body.color-soft .random-all{
+  border-color:#356f78 !important;
+}
+
+/* Accent modes */
+body.color-yellow{ --accent:#ffe36a; }
+body.color-orange{ --accent:#ff9a55; }
+
+body.color-yellow .rate-btn.active,
+body.color-yellow .root-btn.active,
+body.color-yellow .step.playing-step .n,
+body.color-yellow .track.selected-track .track-dot,
+body.color-yellow .fx-handle,
+body.color-yellow .dice-icon,
+body.color-yellow .global-dice,
+body.color-yellow #cycle1Value,
+body.color-yellow #cycle2Value,
+body.color-yellow #cycle3Value,
+body.color-yellow #editLabel{
+  color:var(--accent) !important;
+  border-color:var(--accent) !important;
+}
+
+body.color-orange .rate-btn.active,
+body.color-orange .root-btn.active,
+body.color-orange .step.playing-step .n,
+body.color-orange .track.selected-track .track-dot,
+body.color-orange .fx-handle,
+body.color-orange .dice-icon,
+body.color-orange .global-dice,
+body.color-orange #cycle1Value,
+body.color-orange #cycle2Value,
+body.color-orange #cycle3Value,
+body.color-orange #editLabel{
+  color:var(--accent) !important;
+  border-color:var(--accent) !important;
+}
+
+/* Elements whose active state is filled rather than text-only */
+body.color-yellow .rate-btn.active,
+body.color-yellow .root-btn.active,
+body.color-orange .rate-btn.active,
+body.color-orange .root-btn.active{
+  background:var(--accent) !important;
+  color:var(--cyan) !important;
+}
+
+body.color-yellow .note,
+body.color-orange .note{
+  transition:background .08s,color .08s,border-color .08s;
+}
+
+/* Current sequencer playhead gets the accent without recoloring the whole UI. */
+body.color-yellow .step.playing-step .note,
+body.color-orange .step.playing-step .note{
+  background:var(--accent) !important;
+  border-color:var(--accent) !important;
+}
+
+body.color-yellow .fx-handle,
+body.color-orange .fx-handle{
+  background:var(--accent) !important;
+}
+
+body.color-yellow .contrast-toggle,
+body.color-orange .contrast-toggle{
+  border-color:var(--accent) !important;
+  color:var(--accent) !important;
+}
+
+@media(max-width:520px){
+  .contrast-toggle{
+    width:36px !important;
+    height:18px;
+    font-size:5.5px !important;
+  }
+}

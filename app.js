@@ -358,6 +358,35 @@ function bindRandomAll(){
   });
 }
 
+
+function bindColorToggle(){
+  const button=document.querySelector("#colorToggle");
+  if(!button) return;
+
+  const modes=[
+    {name:"WHITE", cls:null},
+    {name:"SOFT", cls:"color-soft"},
+    {name:"YELLOW", cls:"color-yellow"}
+  ];
+  let index=0;
+
+  function apply(){
+    document.body.classList.remove("color-soft","color-yellow");
+    const mode=modes[index];
+    if(mode.cls) document.body.classList.add(mode.cls);
+    button.dataset.mode=mode.name.toLowerCase();
+    button.textContent=mode.name;
+    button.setAttribute("aria-label",`color mode ${mode.name.toLowerCase()}`);
+  }
+
+  button.addEventListener("click",()=>{
+    index=(index+1)%modes.length;
+    apply();
+  });
+
+  apply();
+}
+
 function bindBPMControl(){
   const el=document.querySelector("#bpmControl");
   if(!el) return;
@@ -888,6 +917,7 @@ function render(){
 document.querySelector("#masterPlay").onclick=toggle;
 updateSeedDisplay();
 startTelemetry();
+bindColorToggle();
 bindBPMControl();
 bindRandomAll();
 bindReverbSlider();
