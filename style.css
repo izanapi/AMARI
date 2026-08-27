@@ -1790,3 +1790,12 @@ body.color-orange .contrast-toggle{
     font-size:5.5px !important;
   }
 }
+
+/* v0.47 flat yellow note-on indicator, shared by every COLOR mode */
+.step.note-on .note{
+  background:#ffe36a !important;
+  border-color:#ffe36a !important;
+  box-shadow:none !important;
+  filter:none !important;
+  transition:none !important;
+}

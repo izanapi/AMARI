@@ -38,6 +38,7 @@ let delayAmount=0;
 let masterVolume=0.78;
 let pos=[0,0,0];
 let lastPlayed=[-1,-1,-1];
+let noteFlashTimers=[null,null,null];
 
 let BPM=120;
 // Shared master grid. One tick = 1/16 note at 120 BPM.
@@ -668,6 +669,10 @@ function schedule(){
         if(playing){
           lastPlayed[i]=playedIndex;
           updatePlayheads();
+
+          // Flat yellow square only during the audible note event.
+          const flashMs=Math.max(55,Math.min(120,(interval*1000)*0.48));
+          flashSoundingStep(i,playedIndex,flashMs);
         }
       },delay);
 
@@ -697,6 +702,8 @@ function stop(){
   clearInterval(schedulerTimer);
   schedulerTimer=null;
   lastPlayed=[-1,-1,-1];
+  noteFlashTimers.forEach(timer=>{ if(timer) clearTimeout(timer); });
+  noteFlashTimers=[null,null,null];
   render();
 }
 function toggle(){playing?stop():start();}
@@ -769,6 +776,25 @@ function bindPitchInteraction(stepEl, noteEl, ti, si){
     pointerId=null;
     render();
   });
+}
+
+function flashSoundingStep(trackIndex, stepIndex, durationMs=90){
+  const el=document.querySelector(`[data-step="${trackIndex}-${stepIndex}"]`);
+  if(!el) return;
+
+  if(noteFlashTimers[trackIndex]){
+    clearTimeout(noteFlashTimers[trackIndex]);
+  }
+
+  document.querySelectorAll(`[data-step^="${trackIndex}-"]`)
+    .forEach(step=>step.classList.remove("note-on"));
+
+  el.classList.add("note-on");
+
+  noteFlashTimers[trackIndex]=setTimeout(()=>{
+    el.classList.remove("note-on");
+    noteFlashTimers[trackIndex]=null;
+  },durationMs);
 }
 
 function updatePlayheads(){
