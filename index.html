@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
   <meta name="theme-color" content="#55e1eb" />
-  <title>AMARI v0.40</title>
+  <title>AMARI v0.41</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -36,6 +36,13 @@
   </header>
   <section id="tracks"></section>
 
+  <section class="tools mod-tools">
+    <button data-action="rotate"><b>←</b><span>SHIFT</span></button>
+    <button data-action="up"><b>↑</b><span>UP</span></button>
+    <button data-action="down"><b>↓</b><span>DOWN</span></button>
+    <button data-action="mirror"><b>⇅</b><span>MIRROR</span></button>
+    <button data-action="reroll"><b class="dice-icon">⚄</b><span>RANDOM</span></button>
+  </section>
   <section class="fx-strip">
     <div class="fx-unit">
       <span class="fx-label">ECHO</span>
@@ -65,16 +72,8 @@
     </div>
   </section>
 
-  <section class="tools mod-tools">
-    <button data-action="rotate"><b>←</b><span>SHIFT</span></button>
-    <button data-action="up"><b>↑</b><span>UP</span></button>
-    <button data-action="down"><b>↓</b><span>DOWN</span></button>
-    <button data-action="mirror"><b>⇅</b><span>MIRROR</span></button>
-    <button data-action="reroll"><b class="dice-icon">⚄</b><span>RANDOM</span></button>
-  </section>
-
   <footer>
-    <span>AMARI&nbsp;&nbsp;v0.40.0</span>
+    <span>AMARI&nbsp;&nbsp;v0.41.0</span>
     <span id="editLabel">EDIT 01</span>
   </footer>
 </main>

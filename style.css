@@ -1388,3 +1388,173 @@ footer{display:flex;justify-content:space-between;padding:8px 4px 0;font-size:10
   .fx-strip{height:35px !important}
   .tools button{min-height:54px !important}
 }
+
+/* v0.41 approved iPhone layout */
+@media (max-width:520px){
+  body{
+    padding-top:8px;
+  }
+
+  .app{
+    padding:4px 5px 8px !important;
+  }
+
+  .top{
+    height:48px !important;
+    margin-bottom:4px;
+  }
+
+  .telemetry{
+    grid-template-columns:96px minmax(156px,1fr) 46px !important;
+  }
+
+  .clock-cell b{
+    font-size:7.5px !important;
+  }
+
+  .cycle-unit b{
+    font-size:9px !important;
+  }
+
+  .cycle-unit small{
+    font-size:5.5px !important;
+    color:#fff !important;
+    opacity:1 !important;
+  }
+
+  .track{
+    grid-template-columns:118px minmax(0,1fr) 28px !important;
+    min-height:198px !important;
+    height:198px !important;
+  }
+
+  .meta{
+    padding:7px 7px !important;
+    overflow:hidden;
+  }
+
+  .track-head{
+    grid-template-columns:46px 1fr !important;
+    gap:7px !important;
+    margin:2px 0 7px !important;
+  }
+
+  .num{
+    font-size:27px !important;
+  }
+
+  .steps-inline{
+    height:43px !important;
+  }
+
+  .steps-inline-value{
+    font-size:19px !important;
+  }
+
+  .steps-inline-label{
+    font-size:6.5px !important;
+  }
+
+  .meta-rate,
+  .root-bank{
+    width:104px !important;
+    margin-bottom:7px !important;
+  }
+
+  .meta-rate-buttons .rate-btn,
+  .root-btn{
+    height:28px !important;
+  }
+
+  .grid{
+    padding:9px 3px 7px !important;
+    overflow:hidden;
+  }
+
+  .step{
+    grid-template-rows:15px minmax(0,1fr) 10px !important;
+  }
+
+  .rail{
+    height:108px !important;
+  }
+
+  .note{
+    width:10px !important;
+    height:10px !important;
+  }
+
+  .base{
+    width:6px !important;
+    height:6px !important;
+  }
+
+  /* MOD directly under the sequencers */
+  .mod-tools{
+    order:0;
+  }
+
+  .tools button{
+    min-height:48px !important;
+    height:48px !important;
+    display:flex;
+    flex-direction:row !important;
+    align-items:center;
+    justify-content:center;
+    gap:8px !important;
+  }
+
+  .tools b{
+    font-size:19px !important;
+  }
+
+  .tools span{
+    font-size:6.5px !important;
+  }
+
+  .dice-icon{
+    font-size:24px !important;
+  }
+
+  /* FX last, compact horizontal instrument strip */
+  .fx-strip{
+    height:34px !important;
+  }
+
+  .fx-unit{
+    grid-template-columns:37px 1fr 25px !important;
+    padding:0 4px !important;
+  }
+
+  .fx-label,
+  .fx-value{
+    font-size:6px !important;
+  }
+
+  .fx-slider{
+    height:22px !important;
+  }
+
+  footer{
+    display:flex !important;
+    min-height:16px !important;
+    padding:6px 3px 0 !important;
+    font-size:7px !important;
+  }
+}
+
+/* Only a gentle squeeze on shorter Safari viewports. */
+@media (max-width:520px) and (max-height:780px){
+  body{padding-top:6px}
+  .top{height:44px !important}
+  .track{
+    min-height:184px !important;
+    height:184px !important;
+  }
+  .rail{height:96px !important}
+  .tools button{
+    min-height:45px !important;
+    height:45px !important;
+  }
+  .fx-strip{height:32px !important}
+}
