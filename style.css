@@ -1198,3 +1198,17 @@ footer{display:flex;justify-content:space-between;padding:8px 4px 0;font-size:10
     font-size:7px !important;
   }
 }
+
+/* v0.39 keep AMARI + version visible at lower left on iPhone */
+@media (max-width:520px){
+  footer{
+    display:flex !important;
+    justify-content:space-between;
+    align-items:center;
+    min-height:14px;
+  }
+  footer span:first-child{
+    display:inline-block;
+    white-space:nowrap;
+  }
+}
