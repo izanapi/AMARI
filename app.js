@@ -768,13 +768,14 @@ function render(){
 
     el.innerHTML=`<div class="meta">
       <button class="drag" data-select="${ti}" aria-label="select track ${ti+1}">⠿</button>
-      <div class="num">0${ti+1}</div>
-      <div class="rule"></div>
 
-      <button class="param-btn" data-length="${ti}">
-        <span class="param-value">${t.len}</span>
-        <span class="param-label">STEPS</span>
-      </button>
+      <div class="track-head">
+        <div class="num">0${ti+1}</div>
+        <button class="steps-inline" data-length="${ti}">
+          <span class="steps-inline-value">${t.len}</span>
+          <span class="steps-inline-label">STEPS</span>
+        </button>
+      </div>
 
       <div class="meta-rate">
         <span class="meta-rate-label">RATE</span>

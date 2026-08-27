@@ -1212,3 +1212,179 @@ footer{display:flex;justify-content:space-between;padding:8px 4px 0;font-size:10
     white-space:nowrap;
   }
 }
+
+/* v0.40 track-head + header cleanup */
+.track-head{
+  width:100%;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  align-items:center;
+  gap:8px;
+  margin:2px 0 8px;
+}
+.steps-inline{
+  min-width:0;
+  height:44px;
+  border:1px solid white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  padding:0 7px;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+.steps-inline-value{
+  font-size:19px;
+  line-height:1;
+}
+.steps-inline-label{
+  font-size:7px;
+  letter-spacing:.08em;
+}
+.steps-inline:active{
+  background:white;
+  color:var(--cyan);
+}
+
+/* keep the old standalone STEPS button hidden if any legacy markup remains */
+.meta>.param-btn{display:none !important}
+
+/* More deliberate header allocation */
+.top{
+  grid-template-columns:minmax(0,1fr) auto !important;
+}
+.telemetry{
+  display:grid !important;
+  grid-template-columns:1.05fr 2.1fr .65fr;
+  min-width:0;
+  overflow:hidden;
+}
+.telemetry-cell{
+  min-width:0 !important;
+}
+.clock-cell,
+.cycle-bank,
+.seed-cell{
+  min-width:0 !important;
+}
+
+/* iPhone portrait */
+@media (max-width:520px){
+  .app{padding:4px 5px 8px}
+
+  .top{
+    height:46px !important;
+  }
+
+  .telemetry{
+    grid-template-columns:92px minmax(150px,1fr) 44px !important;
+  }
+
+  .telemetry-cell{
+    padding:4px 5px 3px !important;
+  }
+
+  .clock-cell b{font-size:7.2px !important}
+  .seed-cell b{font-size:8.5px !important}
+
+  .cycle-bank{
+    padding-left:4px !important;
+    padding-right:4px !important;
+  }
+
+  .cycle-unit{
+    grid-template-columns:7px 1fr !important;
+    grid-template-rows:10px 7px !important;
+    padding:0 2px !important;
+  }
+  .cycle-unit b{font-size:8.5px !important}
+  .cycle-unit small{font-size:5.2px !important}
+
+  .bpm-control{
+    min-width:58px !important;
+    padding:0 5px !important;
+  }
+  .bpm-control #bpmValue{font-size:15px !important}
+  .random-all{width:36px !important}
+  .master-controls .iconbtn{width:38px !important}
+
+  .track{
+    grid-template-columns:112px 1fr 28px !important;
+    min-height:182px !important;
+    height:182px !important;
+  }
+
+  .meta{
+    padding:6px 7px !important;
+  }
+
+  .drag{
+    font-size:10px !important;
+    margin-bottom:2px !important;
+  }
+
+  .track-head{
+    grid-template-columns:42px 1fr;
+    gap:6px;
+    margin:1px 0 6px;
+  }
+
+  .num{
+    font-size:25px !important;
+  }
+
+  .steps-inline{
+    height:38px;
+    padding:0 5px;
+    gap:4px;
+  }
+
+  .steps-inline-value{font-size:17px}
+  .steps-inline-label{font-size:6px}
+
+  .meta-rate,
+  .root-bank{
+    width:98px !important;
+    margin-bottom:6px !important;
+  }
+
+  .meta-rate-label,
+  .root-label{
+    font-size:6.5px !important;
+    padding:4px 5px !important;
+  }
+
+  .meta-rate-buttons .rate-btn,
+  .root-btn{
+    height:25px !important;
+  }
+
+  .root-btn{font-size:6.5px !important}
+
+  .grid{
+    padding:8px 2px 6px !important;
+  }
+  .rail{height:96px !important}
+
+  .fx-strip{height:38px !important}
+  .tools button{min-height:60px !important}
+
+  footer{
+    display:flex !important;
+    padding:5px 3px 0 !important;
+    font-size:7px !important;
+  }
+}
+
+/* Shorter iPhones: modest compression only, no overlap */
+@media (max-width:520px) and (max-height:780px){
+  .top{height:42px !important}
+  .track{
+    min-height:168px !important;
+    height:168px !important;
+  }
+  .rail{height:84px !important}
+  .fx-strip{height:35px !important}
+  .tools button{min-height:54px !important}
+}
