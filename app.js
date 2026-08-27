@@ -368,7 +368,7 @@ function bindColorToggle(){
     {name:"SOFT", cls:"color-soft"},
     {name:"YELLOW", cls:"color-yellow"}
   ];
-  let index=0;
+  let index=2;
 
   function apply(){
     document.body.classList.remove("color-soft","color-yellow");
