@@ -682,3 +682,253 @@ footer{display:flex;justify-content:space-between;padding:8px 4px 0;font-size:10
   opacity:1;
   font-weight:400;
 }
+
+/* v0.37 iPhone portrait compact mode */
+@media (max-width:520px) and (max-height:900px){
+  html,body{
+    overflow-x:hidden;
+  }
+
+  .app{
+    padding:3px 4px 6px;
+  }
+
+  .top{
+    height:38px !important;
+    grid-template-columns:1fr auto !important;
+  }
+
+  .telemetry-cell{
+    min-width:0 !important;
+    padding:3px 4px 2px !important;
+  }
+
+  .clock-cell{min-width:84px !important}
+  .cycle-bank{min-width:154px !important}
+  .seed-cell{min-width:45px !important}
+
+  .telemetry-cell span{
+    font-size:4.5px !important;
+    margin-bottom:2px !important;
+  }
+
+  .clock-cell b{
+    font-size:6.7px !important;
+  }
+
+  .cycle-unit{
+    grid-template-columns:7px 1fr !important;
+    grid-template-rows:9px 6px !important;
+    padding:0 2px !important;
+  }
+
+  .cycle-unit i{font-size:4.5px !important}
+  .cycle-unit b{font-size:7.5px !important}
+  .cycle-unit small{
+    font-size:5px !important;
+    color:#fff !important;
+    opacity:1 !important;
+  }
+
+  .seed-cell b{
+    font-size:8px !important;
+  }
+
+  .bpm-control{
+    min-width:58px !important;
+    padding:0 5px !important;
+  }
+
+  .bpm-control #bpmValue{
+    font-size:14px !important;
+  }
+
+  .bpm-control small{
+    font-size:6px !important;
+  }
+
+  .random-all{
+    width:34px !important;
+  }
+
+  .global-dice{
+    font-size:23px !important;
+  }
+
+  .master-controls .iconbtn{
+    width:36px !important;
+    font-size:18px !important;
+  }
+
+  /* Three tracks should fit comfortably in the remaining vertical space. */
+  .track{
+    grid-template-columns:88px 1fr 24px !important;
+    min-height:136px !important;
+    height:136px !important;
+  }
+
+  .meta{
+    padding:5px 5px !important;
+  }
+
+  .drag{
+    font-size:10px !important;
+    margin-bottom:3px !important;
+    line-height:1 !important;
+  }
+
+  .num{
+    font-size:21px !important;
+    line-height:1 !important;
+  }
+
+  .rule{
+    margin:5px 0 5px !important;
+    width:20px !important;
+  }
+
+  .param-btn{
+    width:76px !important;
+    min-height:34px !important;
+    padding:3px 5px !important;
+    margin-bottom:5px !important;
+  }
+
+  .param-value{
+    font-size:15px !important;
+  }
+
+  .param-label{
+    margin-top:3px !important;
+    font-size:6px !important;
+  }
+
+  .meta-rate{
+    width:76px !important;
+    margin-bottom:5px !important;
+  }
+
+  .meta-rate-label,
+  .root-label{
+    font-size:6px !important;
+    padding:3px 5px 3px !important;
+  }
+
+  .meta-rate-buttons .rate-btn{
+    height:22px !important;
+    font-size:7px !important;
+  }
+
+  .root-bank{
+    width:76px !important;
+    margin-bottom:4px !important;
+  }
+
+  .root-btn{
+    height:22px !important;
+    font-size:6.5px !important;
+  }
+
+  .track-dot{
+    width:5px !important;
+    height:5px !important;
+  }
+
+  .grid{
+    padding:5px 1px 4px !important;
+    gap:0 !important;
+  }
+
+  .step{
+    grid-template-rows:12px 1fr 8px !important;
+  }
+
+  .step .n{
+    font-size:6.5px !important;
+  }
+
+  .rail{
+    height:69px !important;
+  }
+
+  .rail-wrap{
+    min-width:20px !important;
+  }
+
+  .note{
+    width:9px !important;
+    height:9px !important;
+  }
+
+  .base{
+    width:5px !important;
+    height:5px !important;
+  }
+
+  .trackplay{
+    font-size:20px !important;
+  }
+
+  /* Master effects remain touchable but use less vertical space. */
+  .fx-strip{
+    height:32px !important;
+  }
+
+  .fx-unit{
+    grid-template-columns:31px 1fr 21px !important;
+    padding:0 2px !important;
+  }
+
+  .fx-label,
+  .fx-value{
+    font-size:5.5px !important;
+  }
+
+  .fx-slider{
+    height:22px !important;
+  }
+
+  .fx-handle{
+    width:7px !important;
+    height:13px !important;
+  }
+
+  /* MOD row: still large enough to tap, much shorter visually. */
+  .tools button{
+    min-height:47px !important;
+    gap:3px !important;
+  }
+
+  .tools b{
+    font-size:17px !important;
+    line-height:1 !important;
+  }
+
+  .tools span{
+    font-size:6px !important;
+  }
+
+  .dice-icon{
+    font-size:24px !important;
+  }
+
+  footer{
+    height:14px;
+    padding:3px 2px 0 !important;
+    font-size:6.5px !important;
+    line-height:1;
+  }
+}
+
+/* Extra squeeze for shorter iPhones / Safari chrome-heavy view */
+@media (max-width:520px) and (max-height:760px){
+  .top{height:34px !important}
+  .track{
+    min-height:124px !important;
+    height:124px !important;
+  }
+  .rail{height:59px !important}
+  .tools button{min-height:43px !important}
+  .fx-strip{height:29px !important}
+  footer{display:none}
+}
