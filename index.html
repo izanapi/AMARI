@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#55e1eb" />
+  <title>AMARI v0.36</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <div class="telemetry">
+      <div class="telemetry-cell clock-cell">
+        <span>CLOCK</span><b id="clockValue">00:00:00.000</b>
+      </div>
+      <div class="telemetry-cell cycle-bank">
+        <span>CYCLE</span>
+        <div class="cycle-columns">
+          <div class="cycle-unit"><i>1</i><b id="cycle1Value">0000</b><small id="cycle1Time">0.000</small></div>
+          <div class="cycle-unit"><i>2</i><b id="cycle2Value">0000</b><small id="cycle2Time">0.000</small></div>
+          <div class="cycle-unit"><i>3</i><b id="cycle3Value">0000</b><small id="cycle3Time">0.000</small></div>
+        </div>
+      </div>
+      <div class="telemetry-cell seed-cell">
+        <span>SEED</span><b id="seedValue">0000</b>
+      </div>
+    </div>
+    <div class="master-controls">
+      <button id="bpmControl" class="bpm-control" type="button" aria-label="change BPM">
+        <span id="bpmValue">120</span><small>BPM</small>
+      </button>
+      <button id="randomAll" class="random-all" type="button" aria-label="randomize all tracks"><span class="dice-icon global-dice">⚄</span></button>
+      <button id="masterPlay" class="iconbtn" aria-label="play">▶</button>
+    </div>
+  </header>
+  <section id="tracks"></section>
+
+  <section class="fx-strip">
+    <div class="fx-unit">
+      <span class="fx-label">ECHO</span>
+      <div id="delaySlider" class="fx-slider" role="slider" aria-label="Echo amount and feedback" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div id="delayFill" class="fx-fill"></div>
+        <i id="delayHandle" class="fx-handle"></i>
+      </div>
+      <span id="delayValue" class="fx-value">00</span>
+    </div>
+
+    <div class="fx-unit">
+      <span class="fx-label">HALL</span>
+      <div id="reverbSlider" class="fx-slider" role="slider" aria-label="Hall reverb" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10">
+        <div id="reverbFill" class="fx-fill"></div>
+        <i id="reverbHandle" class="fx-handle"></i>
+      </div>
+      <span id="reverbValue" class="fx-value">10</span>
+    </div>
+
+    <div class="fx-unit">
+      <span class="fx-label">VOLUME</span>
+      <div id="volumeSlider" class="fx-slider" role="slider" aria-label="Master volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="78">
+        <div id="volumeFill" class="fx-fill"></div>
+        <i id="volumeHandle" class="fx-handle"></i>
+      </div>
+      <span id="volumeValue" class="fx-value">78</span>
+    </div>
+  </section>
+
+  <section class="tools mod-tools">
+    <button data-action="rotate"><b>←</b><span>SHIFT</span></button>
+    <button data-action="up"><b>↑</b><span>UP</span></button>
+    <button data-action="down"><b>↓</b><span>DOWN</span></button>
+    <button data-action="mirror"><b>⇅</b><span>MIRROR</span></button>
+    <button data-action="reroll"><b class="dice-icon">⚄</b><span>RANDOM</span></button>
+  </section>
+
+  <footer>
+    <span>AMARI&nbsp;&nbsp;v0.36.0</span>
+    <span id="editLabel">EDIT 01</span>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
