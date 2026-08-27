@@ -932,3 +932,269 @@ footer{display:flex;justify-content:space-between;padding:8px 4px 0;font-size:10
   .fx-strip{height:29px !important}
   footer{display:none}
 }
+
+/* v0.38 balanced iPhone portrait layout */
+@media (max-width:520px) and (max-height:920px){
+  .app{
+    padding:4px 5px 8px;
+  }
+
+  .top{
+    height:42px !important;
+    grid-template-columns:1fr auto !important;
+  }
+
+  .telemetry{
+    min-width:0;
+    overflow:hidden;
+  }
+
+  .clock-cell{
+    min-width:96px !important;
+    padding:4px 6px 3px !important;
+  }
+
+  .cycle-bank{
+    min-width:184px !important;
+    padding:4px 5px 3px !important;
+  }
+
+  .seed-cell{
+    min-width:48px !important;
+    padding:4px 4px 3px !important;
+  }
+
+  .telemetry-cell span{
+    font-size:5px !important;
+    margin-bottom:2px !important;
+  }
+
+  .clock-cell b{
+    font-size:7.5px !important;
+    letter-spacing:.01em !important;
+  }
+
+  .cycle-unit{
+    grid-template-columns:8px 1fr !important;
+    grid-template-rows:11px 7px !important;
+    padding:0 3px !important;
+  }
+
+  .cycle-unit i{font-size:5px !important}
+  .cycle-unit b{
+    font-size:9px !important;
+    letter-spacing:.03em !important;
+  }
+  .cycle-unit small{
+    font-size:5.5px !important;
+    color:#fff !important;
+    opacity:1 !important;
+  }
+
+  .seed-cell b{
+    font-size:9px !important;
+  }
+
+  .bpm-control{
+    min-width:64px !important;
+    padding:0 6px !important;
+  }
+
+  .bpm-control #bpmValue{
+    font-size:16px !important;
+  }
+
+  .bpm-control small{
+    font-size:6px !important;
+  }
+
+  .random-all{
+    width:38px !important;
+  }
+
+  .global-dice{
+    font-size:25px !important;
+  }
+
+  .master-controls .iconbtn{
+    width:40px !important;
+    font-size:19px !important;
+  }
+
+  /* Three readable tracks, not over-compressed. */
+  .track{
+    grid-template-columns:102px 1fr 28px !important;
+    min-height:178px !important;
+    height:178px !important;
+  }
+
+  .meta{
+    padding:7px 7px !important;
+  }
+
+  .drag{
+    font-size:11px !important;
+    margin-bottom:5px !important;
+    line-height:1 !important;
+  }
+
+  .num{
+    font-size:25px !important;
+    line-height:1 !important;
+  }
+
+  .rule{
+    margin:7px 0 7px !important;
+    width:24px !important;
+  }
+
+  .param-btn{
+    width:88px !important;
+    min-height:42px !important;
+    padding:5px 6px !important;
+    margin-bottom:6px !important;
+  }
+
+  .param-value{
+    font-size:18px !important;
+  }
+
+  .param-label{
+    margin-top:4px !important;
+    font-size:7px !important;
+  }
+
+  .meta-rate{
+    width:88px !important;
+    margin-bottom:6px !important;
+  }
+
+  .meta-rate-label,
+  .root-label{
+    font-size:7px !important;
+    padding:4px 6px 4px !important;
+  }
+
+  .meta-rate-buttons .rate-btn{
+    height:26px !important;
+    font-size:8px !important;
+  }
+
+  .root-bank{
+    width:88px !important;
+    margin-bottom:5px !important;
+  }
+
+  .root-btn{
+    height:26px !important;
+    font-size:7px !important;
+  }
+
+  .track-dot{
+    width:6px !important;
+    height:6px !important;
+  }
+
+  .grid{
+    padding:8px 2px 6px !important;
+    gap:0 !important;
+  }
+
+  .step{
+    grid-template-rows:14px 1fr 9px !important;
+  }
+
+  .step .n{
+    font-size:7.5px !important;
+  }
+
+  .rail{
+    height:96px !important;
+  }
+
+  .rail-wrap{
+    min-width:22px !important;
+  }
+
+  .note{
+    width:10px !important;
+    height:10px !important;
+  }
+
+  .base{
+    width:6px !important;
+    height:6px !important;
+  }
+
+  .trackplay{
+    font-size:21px !important;
+  }
+
+  /* FX row */
+  .fx-strip{
+    height:38px !important;
+  }
+
+  .fx-unit{
+    grid-template-columns:34px 1fr 24px !important;
+    padding:0 3px !important;
+  }
+
+  .fx-label,
+  .fx-value{
+    font-size:6px !important;
+  }
+
+  .fx-slider{
+    height:24px !important;
+  }
+
+  .fx-handle{
+    width:8px !important;
+    height:15px !important;
+  }
+
+  /* MOD row */
+  .tools button{
+    min-height:60px !important;
+    gap:5px !important;
+  }
+
+  .tools b{
+    font-size:20px !important;
+    line-height:1 !important;
+  }
+
+  .tools span{
+    font-size:6.5px !important;
+  }
+
+  .dice-icon{
+    font-size:27px !important;
+  }
+
+  footer{
+    padding:6px 3px 0 !important;
+    font-size:7.5px !important;
+  }
+}
+
+/* Slightly shorter iPhones */
+@media (max-width:520px) and (max-height:780px){
+  .top{height:39px !important}
+
+  .track{
+    min-height:162px !important;
+    height:162px !important;
+  }
+
+  .rail{height:82px !important}
+
+  .tools button{min-height:54px !important}
+  .fx-strip{height:34px !important}
+
+  footer{
+    padding-top:4px !important;
+    font-size:7px !important;
+  }
+}
