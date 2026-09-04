@@ -1799,3 +1799,56 @@ body.color-orange .contrast-toggle{
   filter:none !important;
   transition:none !important;
 }
+
+/* v0.49 responsive shell: reachable controls from compact phones to wide screens. */
+html,body{min-width:0;min-height:100%;height:auto;overflow-x:hidden;overflow-y:auto}
+body{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
+.app{
+  width:min(100%, 1100px);
+  max-width:1100px;
+  min-height:100dvh;
+  padding-inline:max(10px, env(safe-area-inset-left), env(safe-area-inset-right));
+}
+.top,.telemetry,.track,.grid,.master-controls{min-width:0}
+@media (min-width:900px){
+  .track{grid-template-columns:150px minmax(0,1fr) 44px !important}
+  .meta{padding-inline:14px !important}
+  .grid{padding-inline:16px !important;gap:8px !important}
+  .rail-wrap{min-width:42px}
+  .tools button{min-height:74px}
+}
+@media (max-width:620px){
+  .app{padding-inline:6px !important}
+  .top{height:auto !important;min-height:48px;grid-template-columns:1fr !important;align-items:stretch}
+  .telemetry{width:100%;grid-template-columns:minmax(92px,1fr) minmax(150px,1.7fr) minmax(44px,.6fr) !important}
+  .master-controls{height:44px;border-top:1px solid var(--white);border-left:0;justify-content:flex-end}
+  .bpm-control{margin-right:auto;border-left:1px solid var(--white)}
+  .track{grid-template-columns:clamp(96px,31vw,118px) minmax(0,1fr) 28px !important;height:auto !important;min-height:184px !important}
+  .meta{padding:6px !important}
+  .grid{overflow:visible !important;padding-inline:2px !important}
+  .rail-wrap{min-width:0}
+}
+@media (max-width:390px){
+  .telemetry{grid-template-columns:1fr 1.45fr !important}
+  .seed-cell{display:none}
+  .track{grid-template-columns:92px minmax(0,1fr) 24px !important}
+  .track-head{grid-template-columns:38px minmax(0,1fr) !important;gap:4px !important}
+  .num{font-size:23px !important}
+  .steps-inline{height:38px !important;padding-inline:3px !important}
+  .meta-rate,.root-bank{width:80px !important}
+  .rate-btn,.root-btn{font-size:6px !important}
+  .mod-tools{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .tools button{min-width:0;padding-inline:2px;gap:3px !important}
+  .tools span{font-size:5.5px !important}
+  .fx-strip{height:auto !important;grid-template-columns:1fr !important}
+  .fx-unit{min-height:34px;border-left:0 !important;border-top:1px solid var(--white)}
+  .fx-unit:first-child{border-top:0}
+}
+@media (orientation:landscape) and (max-height:560px){
+  .app{max-width:100%;padding-top:4px}
+  .top{grid-template-columns:minmax(0,1fr) auto !important}
+  .master-controls{height:100%;border-top:0;border-left:1px solid var(--white)}
+  .track{min-height:156px !important;height:156px !important}
+  .rail{height:72px !important}
+  .tools button{min-height:42px !important;height:42px !important}
+}
