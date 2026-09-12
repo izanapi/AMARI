@@ -1852,3 +1852,89 @@ body{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bot
   .rail{height:72px !important}
   .tools button{min-height:42px !important;height:42px !important}
 }
+
+/* Phone portrait: all three tracks, transport and FX stay in one viewport. */
+@media (max-width:620px) and (orientation:portrait){
+  html,body{height:100%;overflow:hidden}
+  body{padding:0 !important}
+  .app{
+    height:100dvh;min-height:0;max-height:100dvh;overflow:hidden;
+    padding:calc(4px + env(safe-area-inset-top)) 5px calc(4px + env(safe-area-inset-bottom)) !important;
+    display:grid;grid-template-rows:46px minmax(0,1fr) 38px 35px 14px;gap:2px;
+  }
+  .top{height:46px !important;min-height:0;margin:0;grid-template-columns:minmax(0,1fr) auto !important;align-items:stretch}
+  .telemetry{width:100%;height:100%;min-width:0;grid-template-columns:minmax(73px,88px) minmax(0,1fr) !important;overflow:hidden}
+  .telemetry-cell{min-width:0 !important;padding:3px 4px !important}
+  .clock-cell b{font-size:8px !important;letter-spacing:0}
+  .cycle-bank{min-width:0 !important;padding-inline:2px !important}
+  .cycle-unit{min-width:0;grid-template-columns:7px minmax(0,1fr) !important;grid-template-rows:11px 8px !important;padding-inline:2px !important}
+  .cycle-unit b{font-size:9px !important;letter-spacing:0;white-space:nowrap}
+  .cycle-unit small{font-size:6px !important;white-space:nowrap}
+  .seed-cell{display:none}
+  .master-controls{height:46px;border-top:0;border-left:1px solid var(--white)}
+  .bpm-control{margin:0;min-width:52px !important;padding-inline:3px !important}
+  .bpm-control #bpmValue{font-size:14px !important}
+  .random-all{width:29px !important}
+  .master-controls .iconbtn{width:30px !important}
+  .global-dice{font-size:21px !important}
+  #tracks{min-height:0;display:grid;grid-template-rows:repeat(3,minmax(0,1fr))}
+  .track{height:auto !important;min-height:0 !important;grid-template-columns:clamp(93px,27vw,108px) minmax(0,1fr) 25px !important}
+  .meta{min-height:0;padding:3px 5px !important;overflow:hidden}
+  .drag{font-size:9px !important;line-height:1;margin:0}
+  .track-head{width:100%;grid-template-columns:32px minmax(0,1fr) !important;gap:3px !important;margin:2px 0 3px !important}
+  .num{font-size:20px !important}
+  .steps-inline{height:30px !important;min-width:0;padding-inline:2px !important;gap:2px !important}
+  .steps-inline-value{font-size:13px !important}
+  .steps-inline-label{font-size:6px !important}
+  .meta-rate,.root-bank{width:100% !important;min-width:0;margin-bottom:3px !important}
+  .meta-rate-label,.root-label{font-size:7px !important;padding:2px 3px !important}
+  .meta-rate-buttons .rate-btn,.root-btn{height:20px !important;font-size:8px !important}
+  .track-dot{display:none}
+  .grid{min-width:0;overflow:hidden !important;padding:6px 1px 4px !important;gap:0 !important}
+  .step{min-width:0;grid-template-rows:13px minmax(0,1fr) 8px !important}
+  .step .n{font-size:8px}
+  .rail-wrap{min-width:0}
+  .rail{height:min(12dvh,82px) !important}
+  .trackplay{font-size:19px}
+  .mod-tools{grid-template-columns:repeat(5,minmax(0,1fr));min-height:0}
+  .tools button{min-height:0 !important;height:auto !important;min-width:0;flex-direction:column !important;gap:1px !important;padding:0 2px}
+  .tools b{font-size:17px !important;line-height:1}
+  .tools span{font-size:6px !important;line-height:1;white-space:nowrap}
+  .tools .dice-icon{font-size:18px !important}
+  .fx-strip{height:35px !important;min-height:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+  .fx-unit{min-width:0;min-height:0;grid-template-columns:30px minmax(0,1fr) 20px !important;padding-inline:2px !important;border-top:0 !important}
+  .fx-unit+.fx-unit{border-left:1px solid var(--white) !important}
+  .fx-label,.fx-value{font-size:7px !important}
+  .fx-slider{min-width:0;height:24px !important}
+  footer{display:flex !important;min-height:0 !important;margin:0;padding:0 2px !important;font-size:7px !important;align-items:center}
+  .footer-right{gap:5px}
+  .contrast-toggle{height:14px;font-size:6px !important}
+}
+@media (max-width:360px) and (orientation:portrait){
+  .telemetry{grid-template-columns:minmax(0,1fr) !important}
+  .clock-cell{display:none}
+  .cycle-unit b{font-size:8px !important}
+  .track{grid-template-columns:87px minmax(0,1fr) 22px !important}
+  .meta{padding-inline:3px !important}
+  .fx-unit{grid-template-columns:25px minmax(0,1fr) 17px !important}
+  .fx-label,.fx-value{font-size:6px !important}
+}
+@media (max-width:620px) and (max-height:720px) and (orientation:portrait){
+  .app{grid-template-rows:42px minmax(0,1fr) 34px 31px 12px}
+  .top,.master-controls{height:42px !important}
+  .track-head{margin-bottom:2px !important}
+  .rail{height:min(10dvh,64px) !important}
+  .tools b{font-size:15px !important}
+  .fx-strip{height:31px !important}
+}
+@media (max-width:620px) and (max-height:540px) and (orientation:portrait){
+  html,body{height:auto;overflow-y:auto}
+  .app{height:auto;min-height:100dvh;max-height:none;overflow:visible;grid-template-rows:42px repeat(3,130px) 34px 31px 12px}
+  #tracks{display:contents}
+}
+@media (orientation:landscape) and (max-width:700px){
+  .telemetry{grid-template-columns:minmax(70px,88px) minmax(0,1fr) !important}
+  .cycle-bank{min-width:0 !important}
+  .seed-cell{display:none}
+  .master-controls{height:100%}
+}
