@@ -1938,3 +1938,28 @@ body{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bot
   .seed-cell{display:none}
   .master-controls{height:100%}
 }
+
+/* A small type lift for the compact instrument; geometry stays unchanged. */
+@media (max-width:620px) and (orientation:portrait){
+  .telemetry-cell span{font-size:6.5px !important;letter-spacing:.04em !important}
+  .clock-cell b{font-size:9px !important}
+  .cycle-unit b{font-size:10px !important}
+  .cycle-unit small{font-size:7px !important;letter-spacing:0}
+  .bpm-control small{font-size:7px !important}
+  .steps-inline-label{font-size:7px !important}
+  .meta-rate-label,.root-label{font-size:8px !important;letter-spacing:.03em !important}
+  .meta-rate-buttons .rate-btn,.root-btn{font-size:8.5px !important}
+  .step .n{font-size:9px}
+  .tools span{font-size:7px !important;letter-spacing:0}
+  .fx-label,.fx-value{font-size:7.5px !important;letter-spacing:0}
+  footer{font-size:8px !important}
+  .telemetry-cell span,.bpm-control small,.steps-inline-label,
+  .meta-rate-label,.root-label,.tools span,.fx-label,.fx-value,footer{
+    font-weight:700;
+  }
+}
+@media (max-width:360px) and (orientation:portrait){
+  .cycle-unit b{font-size:9px !important}
+  .fx-label,.fx-value{font-size:7px !important}
+  .tools span{font-size:6.5px !important}
+}
